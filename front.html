@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- This sets the character encoding of the document to UTF-8, which supports almost all characters from all languages. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- This makes the website responsive by setting the width of the viewport to follow the width of the device. -->
+    <title>E.M.S</title> <!-- This sets the title of the webpage, which appears in the browser tab. -->
+    <link rel="stylesheet" href="front.css"> <!-- This links to an external CSS file for styling the webpage. -->
+    <link rel="icon" href="calendar.png" type="image/png"> <!-- This sets a small icon (favicon) that appears in the browser tab. -->
+</head>
+<header>
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <img src="food (3).png" alt="Logo" class="logo">Event Management System
+    </h1> <!-- This is the header of the page, containing a logo image and the title "Event Management System". -->
+</header>
+<body>
+    <div class="login-container">
+        <h2>Login</h2> <!-- This is a heading for the login section. -->
+        <form action="login_process.php" method="post"> <!-- This form will send data to "login_process.php" when submitted, using the POST method. -->
+            <label for="reg_no">Registration Number</label> <!-- This is a label for the registration number input field. -->
+            <input type="text" id="reg_no" name="reg_no" required> <!-- This is a text input field for the registration number. -->
+
+            <label for="password">Date of Birth</label> <!-- This is a label for the date of birth input field. -->
+            <input type="password" id="password" name="password" required> <!-- This is a date input field for the date of birth. -->
+
+            <button type="submit">Login</button> <!-- This is a button that submits the form when clicked. -->
+        </form>
+    </div>
+</body>
+</html>
+

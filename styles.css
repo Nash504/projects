@@ -1,0 +1,77 @@
+title
+{
+font-weight: bolder;
+font-size: larger;
+}
+body{
+    background-color: #0a1412;
+    background-image:"astro.png";
+    margin: 0;
+    padding: 0;
+}
+navbar .login {
+    align-content: end;
+    color: white; /* Makes the text color white */
+    text-decoration: none; /* Removes the underline from the links */
+    font-family: Arial, sans-serif; /* Uses a simple, clean font */
+    padding: 10px 20px; /* Adds space inside the links */
+    display: block; /* Makes the whole link clickable */
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    background-color: #0a1412;
+    padding: 10px 0;
+}
+h1
+{
+color:#90DFD2;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+p.heading
+{
+    font-size:xx-large;
+    font-weight: bold;
+    color:#149580;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar {
+    list-style: none; /* Hides the little dots next to the list items */
+    padding: 0; /* Removes space around the list */
+    display: flex; /* Puts the items in a row */
+    justify-content: left; /* Centers the row in the middle */
+    flex-direction: row;
+    background-color:#074f43; /* Colors the background dark grey */
+}
+
+.navbar li {
+    margin: 0 15px; /* Adds space between each item */
+    padding: 10px; /* Adds space around the text */
+    font-style:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+.navbar a {
+    color: white; /* Makes the text color white */
+    text-decoration: none; /* Removes the underline from the links */
+    font-family: Arial, sans-serif; /* Uses a simple, clean font */
+    padding: 10px 20px; /* Adds space inside the links */
+    display: block; /* Makes the whole link clickable */
+}
+
+.navbar a:hover {
+    background-color:#90dfd2; /* Changes the color when you hover over it */
+    border-radius: 5px; /* Makes the corners round when you hover */
+    color: #0a1412;
+    font-style:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    transition: background-color 0.3s, color 0.3s; 
+}
+

@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif; /* This sets the font for the body text to Arial or a similar sans-serif font. */
+    background-color:#0a1412; /* This sets the background color of the page to a light gray. */
+    margin: 0; /* This removes the default margin around the body. */
+    padding: 0; /* This removes the default padding around the body. */
+    display: flex; /* This makes the body a flex container. */
+    justify-content: center; /* This centers the content horizontally. */
+    align-items: center; /* This centers the content vertically. */
+    height: 100vh; /* This sets the height of the body to the full height of the viewport. */
+}
+
+header {
+    width: 100%;
+    position: absolute; /* Make the header position absolute */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    padding: 20px; 
+    color: #149580;
+}
+
+.logo {
+    vertical-align:left; /* This aligns the logo vertically in the middle of the line. */
+}
+
+.login-container {
+    background-color:#0a1412; /* This sets the background color of the login container to white. */
+    padding: 20px 30px; /* This adds some padding inside the login container. */
+    border-radius: 10px; /* This rounds the corners of the login container. */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* This adds a subtle shadow around the login container. */
+    width: 300px; /* This sets the width of the login container. */
+    text-align: center; /* This centers the text inside the login container. */
+}
+
+.login-container h2 {
+    margin-bottom: 20px; /* This adds some space below the heading. */
+    color:#149580;
+}
+
+.login-container label {
+    color:#90DFD2;
+    font-weight: bold;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: block; /* This makes the label take up the full width, stacking above the input. */
+    text-align: left; /* This aligns the text inside the label to the left. */
+    margin: 10px 0 5px; /* This adds some space above and below the label. */
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%; /* This makes the input fields take up the full width of the container. */
+    padding: 10px; /* This adds some padding inside the input fields. */
+    margin-bottom: 10px; /* This adds some space below the input fields. */
+    border: 1px solid #ccc; /* This adds a border around the input fields. */
+    border-radius: 5px; /* This rounds the corners of the input fields. */
+}
+
+.login-container button {
+    font-weight: bold;
+    font-style:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    width: 100%; /* This makes the button take up the full width of the container. */
+    padding: 10px; /* This adds some padding inside the button. */
+    background-color: #074f43; /* This sets the background color of the button to green. */
+    border: none; /* This removes the border around the button. */
+    border-radius: 5px; /* This rounds the corners of the button. */
+    color: white; /* This sets the text color of the button to white. */
+    font-size: 16px; /* This sets the font size of the button text. */
+    cursor: pointer; /* This changes the cursor to a pointer when hovering over the button. */
+}
+
+.login-container button:hover {
+    background-color: #218838; /* This darkens the background color of the button when hovered. */
+}
