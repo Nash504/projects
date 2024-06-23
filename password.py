@@ -1,9 +1,21 @@
 import streamlit as st
-import requests
-import sqlite3
-import hashlib 
+import requests,sqlite3,hashlib ,string,pyperclip
 API_KEY = 'ZH+fZzgrfbOclJuktL0DHg==J5T0OcE93umMFzj7'
-
+def pass_strength(password):
+    uppercase_criteria=any(c.isupper() for c in password)
+    lowercase_criteria=any(c.islower() for c in password)
+    digit_criteria=any(c.isdigit() for c in password)
+    special_char_criteria=any(c in string.punctuation for c in password)
+    total_criteria_met=(uppercase_criteria+lowercase_criteria+digit_criteria+special_char_criteria)
+    if total_criteria_met==4:
+        return "Strong"
+    elif total_criteria_met>=2:
+        return "Medium"
+    else:
+        return "Weak"
+def clipboard_copy(password):
+    pyperclip.copy(password)
+    return "Password copied to clipboard!"
 def fetch_password(length):
     api_url = f"https://api.api-ninjas.com/v1/passwordgenerator?length={length}"
     response = requests.get(api_url, headers={'X-Api-Key': API_KEY})
@@ -60,14 +72,14 @@ def main():
     # Initialize the database
     init_db()
 
-    length = st.number_input("Enter the length of the password", min_value=1, max_value=35)
+    length = st.number_input("Enter the length of the password", min_value=12, max_value=35)
 
     if 'generated_password' not in st.session_state:
         st.session_state['generated_password'] = ""
 
     if st.button("Generate"):
-        if length < 1:
-            st.error("Length should be greater than 0")
+        if length < 12:
+            st.error("Length should be greater than 10")
         elif length > 35:
             st.error("Length should be less than 35")
         else:
@@ -75,10 +87,12 @@ def main():
     
     if st.session_state['generated_password']:
         st.markdown(f'<p style="color:white;font-weight:bold;font-size:20px;">Generated Password: <span style="color:#4dc6b8; font-weight:bold;">{st.session_state["generated_password"]}</span></p>', unsafe_allow_html=True)
-        
+        password_strength=pass_strength(st.session_state['generated_password'])
+        st.markdown(f'<p style="color:white;font-weight:bold;font-size:20px;">Password Strength: <span style="color:#4dc6b8; font-weight:bold;">{password_strength}</span></p>', unsafe_allow_html=True)
         if st.button("Confirm"):
             insert_password(st.session_state['generated_password'], length)
             st.success("Password saved successfully!")
-            st.session_state['generated_password'] = ""
+        if st.button("Copy to Clipboard"):
+            st.success(clipboard_copy(st.session_state['generated_password']))
 if __name__ == "__main__":
     main()
